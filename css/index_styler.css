@@ -1,0 +1,418 @@
+
+
+/********************** FONT LOADER **********************/
+
+
+@font-face {
+  font-family: Roboto_Light;
+  src: url('../fonts/roboto/Roboto-Light.ttf');
+}
+
+
+@font-face {
+  font-family: Roboto_Black;
+  src: url('../fonts/roboto/Roboto-Black.ttf');
+}
+
+
+/********************** GLOBAL STYLER **********************/
+
+
+body {
+  user-select: none;
+}
+
+.plutus_logo {
+  display: block;
+  margin: auto;
+  width: 90%;
+  height: auto;
+}
+
+#main_container {
+  display: none;
+}
+
+
+
+/********************** HEADER MENU **********************/
+
+
+#menu{
+  display: grid;
+  text-align: center;
+  position: fixed;
+}
+
+#menu_table{
+  display: table;
+  table-layout: fixed;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu_cell{
+  display: table-cell;
+  padding: 15px 0px;
+  font-size: 15px;
+  color: #ddd;
+  letter-spacing: 3px;
+  font-family: Roboto_Light;
+  transition: all .4s ease-out;
+}
+
+.menu_cell:hover{
+  cursor: pointer;
+  transform: translate3d(0, -3px, 0);
+}
+
+
+/********************** NET WORTH TAB **********************/
+
+
+#net_worth_tab{
+  display: grid;
+  grid-template-columns: 10% 35% 10% 35% 10%;
+  padding: 50px 0px;
+}
+
+
+#net_worth_tab p{
+  color: #ddd;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#net_worth_tab h1{
+  color: #ddd;
+  padding-top: 20px;
+  letter-spacing: 2px;
+  font-family: Roboto_Black;
+}
+
+.net_worth_accounts_container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 35% 10%;
+  height: 40px;
+  transition: all .4s ease-out;
+}
+
+
+.net_worth_assets_container, .net_worth_liabilities_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 40% 10%;
+  height: 40px;
+  transition: all .4s ease-out;
+}
+
+
+.net_worth_accounts_container:hover, .net_worth_assets_container:hover, .net_worth_liabilities_container:hover{
+  cursor: pointer;
+  transform: translate3d(10px, 0, 0);
+}
+
+
+.net_worth_accounts_close {
+  color: #F16C20;
+  background-color: #F16C20;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+.net_worth_assets_close {
+  color: #6FAF49;
+  background-color: #6FAF49;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+.net_worth_liabilities_close {
+  color: #D5174C;
+  background-color: #D5174C;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+.net_worth_accounts_close:hover, .net_worth_assets_close:hover, .net_worth_liabilities_close:hover{
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+.net_worth_summary{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 40px;
+}
+
+
+/********************** BUDGET TAB **********************/
+
+
+#budget_tab{
+  display: none;
+  grid-template-columns: 10% 35% 10% 35% 10%;
+  padding: 50px 0px;
+}
+
+
+#budget_tab p{
+  color: #ddd;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+#budget_tab h1{
+  color: #ddd;
+  padding-top: 20px;
+  letter-spacing: 2px;
+  font-family: Roboto_Black;
+}
+
+
+.budget_expense_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 35% 10%;
+  height: 40px;
+  transition: all .4s ease-out;
+}
+
+
+.budget_overview_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  height: 40px;
+  transition: all .4s ease-out;
+}
+
+
+.budget_expense_container:hover, .budget_overview_container-income:hover{
+  cursor: pointer;
+  transform: translate3d(10px, 0, 0);
+}
+
+
+.budget_expense_close {
+  color: #F16C20;
+  background-color: #F16C20;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+.budget_expense_close:hover{
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+/********************** GOALS TAB **********************/
+
+
+#goals_tab{
+  display: none;
+  grid-template-columns: 15% 70% 15%;
+  padding: 50px 0px;
+}
+
+
+#goals_tab p{
+  color: #ddd;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+#goals_tab h1{
+  color: #ddd;
+  padding-top: 20px;
+  letter-spacing: 2px;
+  font-family: Roboto_Black;
+}
+
+
+.goals_container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34% 32% 27% 7%;
+  height: 84px;
+  transition: all .4s ease-out;
+}
+
+
+.goals_container p{
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.goals_add_container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34% 32% 27% 7%;
+  height: 84px;
+  transition: all .4s ease-out;
+  background-color: yellow;
+}
+
+
+.goals_add_container p{
+  padding: 60px 0;
+}
+
+
+.goals_container:hover, .goals_add_container:hover{
+  cursor: pointer;
+  transform: translate3d(10px, 0, 0);
+}
+
+
+.goals_close {
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.goals_col_4:hover {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+.goals_col_4{
+  height: 72px;
+  margin-top: 36px;
+  position: relative;
+  background-color: #F27934;
+}
+
+
+.goals_col_4_{
+  height: 72px;
+  margin-top: 36px;
+  position: relative;
+}
+
+
+.goals_col_1 span{
+  color: #ED9C73;
+}
+
+
+.goals_col_2 span{
+  color: #F7AE84;
+}
+
+
+.goals_col_3 span{
+  color: #F7B58F;
+}
+
+
+/********************** ABOUT TAB **********************/
+
+#about_tab{
+  display: none;
+  grid-template-columns: 10% 35% 10% 35% 10%;
+  padding: 50px 0px;
+}
+
+
+#about_tab p{
+  color: #ddd;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 10px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+#about_tab h1{
+  color: #ddd;
+  padding-top: 20px;
+  letter-spacing: 2px;
+  font-family: Roboto_Black;
+}
+
+
+.about_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90%;
+  height: 40px;
+  transition: all .4s ease-out;
+}
+
+
+.about_container span{
+  font-weight: bolder;
+  font-style: oblique;
+  color: #F7B58F;
+}
+
+
+#about_tab p.bold{
+  font-size: 14px;
+  font-family: Roboto_Black;
+}

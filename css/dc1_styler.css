@@ -1,0 +1,52 @@
+
+
+/********************** FONT LOADER **********************/
+
+
+@font-face {
+  font-family: Roboto_Light;
+  src: url('../fonts/roboto/Roboto-Light.ttf');
+}
+
+
+@font-face {
+  font-family: Roboto_Black;
+  src: url('../fonts/roboto/Roboto-Black.ttf');
+}
+
+
+/********************** GLOBAL STYLER **********************/
+
+
+body {
+  background-color: #000;
+  user-select: none;
+}
+
+
+p {
+  color: #ababab;
+  font-family: Roboto_Light;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 15px 0 0px 44px;
+  margin: 0;
+}
+
+
+input {
+  color: #ababab;
+  background-color: #000;
+  font-family: Roboto_Light;
+  letter-spacing: 1px;
+  margin-left: 40px;
+  margin-top: 0px;
+  height: 40px;
+  font-size: 36px;
+  padding-left: 0px;
+  width: 400px;
+  border-color: #000;
+}
+
+
+input:focus { outline: none; }
