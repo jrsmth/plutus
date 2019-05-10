@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>plutus</title>
+    <link rel="stylesheet" href="css/dc1_styler.css">
+  </head>
+  <body>
+
+
+    <script> window.$ = window.jQuery = require('jquery'); </script>
+
+    <script>
+
+      const { remote, ipcRenderer } = require ('electron');
+
+      var fs = require('fs')
+
+      var path = require('path')
+
+
+      // Load Saved Data
+
+      fs.readFile(path.join(__dirname, 'storage', 'index.json'), function (err, data) {
+                var index_json = JSON.parse(data);
+                // construct relevant data change through window prompt (1)
+                var dc1_prompt = document.createElement("div");
+                dc1_prompt.innerHTML = '<p> Change ' + index_json.item + '</p>'
+                document.body.appendChild(dc1_prompt);
+
+                // establish relevant form (2)
+                fs.readFile(path.join(__dirname, 'storage', index_json.file), function (err, data) {
+                  var active_file_json = JSON.parse(data); // ex. accounts_json
+                  var dc1_input = document.createElement("div");
+                  // ex. accounts_json.correct_array[correct_index]
+                  var active_arr_name = index_json.arr_name; // ex. name (accounts)
+                  var active_arr = active_file_json[active_arr_name]; // ex. ["Expenses","Emergency Fund","Saving","Name","Name"]
+                  var active_elem = active_arr[index_json.index]; // ex. "Expenses"
+                  dc1_input.innerHTML = '<input id = "input" value = "' + active_elem + '" autofocus="autofocus" onfocus="this.select()" >';
+                  document.body.appendChild(dc1_input);
+                })
+              })
+
+
+      // Store new item and return to main
+      // Store + Return (enter) is handled here, Cancel + Return (click outside) is handle in Main.js
+
+      document.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+          // open up index, find + open correct file, take whatever is in input and rewrite correct file
+          fs.readFile(path.join(__dirname, 'storage', 'index.json'), function (err, data) {
+            var index_json = JSON.parse(data);
+            fs.readFile(path.join(__dirname, 'storage', index_json.file), function (err, data) {
+              var active_file_json = JSON.parse(data); // ex. accounts_json
+              var input = document.getElementById('input').value;
+              var active_arr = active_file_json[index_json.arr_name]; // ex. name (accounts)
+              active_arr[index_json.index] = input;
+              // update correct file
+              fs.writeFile(path.join(__dirname, 'storage', index_json.file), JSON.stringify(active_file_json), function(err){
+                if (err) throw err;
+                console.log('The "data to append" was appended to file!');
+              })
+            })
+          })
+          ipcRenderer.send('close_change_data_1');
+        }
+      })
+
+    </script>
+
+  </body>
+</html>

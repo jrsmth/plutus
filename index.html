@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index_styler.css">
+    <title>plutus</title>
+  </head>
+  <body id = "body">
+
+    <!-- Intro Plutus Logo -->
+    <div id = "intro_container"><img class = "plutus_logo" src="images/plutus_logo.png" alt="Plutus Icon"></div>
+
+
+    <!-- MAIN CONTAINER -> allows for proper fading -->
+    <div id = "main_container">
+
+      <!-- MENU HEADER -->
+      <div id = "menu">
+        <div id = "menu_table">
+          <div class = "menu_cell" onclick="switch_tab(this)"> <a class = "active"> Net Worth </a> </div>
+          <div class = "menu_cell" onclick="switch_tab(this)"> <a class = "inactive"> Budget </a> </div>
+          <div class = "menu_cell" onclick="switch_tab(this)"> <a class = "inactive"> Goals </a> </div>
+          <div class = "menu_cell" onclick="switch_tab(this)"> <a class = "inactive"> About </a> </div>
+        </div>
+      </div>
+
+      <!-- NET WORTH TAB -->
+      <div id = "net_worth_tab">
+          <div class="blank"></div>
+
+            <!-- Contains the accounts and the accounts/net worth sums -->
+            <div id = "net_worth_col_1">
+              <h1> Accounts </h1>
+              <div id = "net_worth_accounts_list">
+                <!-- Empty list that gets appended to -->
+              </div>
+
+              <!-- Add New Account Button -->
+              <div class = "net_worth_accounts_container">
+                <p  class = "" onclick="add_account()" style="padding-left: 20px;"> Add Account </p>
+              </div>
+
+              <!-- Accounts Summary & Net Worth Summary -->
+              <div id = "net_worth_summary_list"> </div>
+
+            </div>
+
+          <div class="blank"></div>
+
+          <div id = "net_worth_col_2">
+
+            <h1> Net Worth </h1>
+
+            <div id = "net_worth_assets_list">
+              <!-- Empty list that gets appended to -->
+            </div>
+
+            <!-- Add New Asset Button -->
+            <div class = "net_worth_assets_container">
+              <p  class = "" onclick="add_asset()" style="padding-left: 20px;"> Add Asset </p>
+            </div>
+
+            <div id = "net_worth_liabilities_list">
+              <!-- Empty list that gets appended to -->
+            </div>
+
+            <!-- Add New Liability Button -->
+            <div class = "net_worth_liabilities_container">
+              <p  class = "" onclick="add_liability()" style="padding-left: 20px;"> Add Liability </p>
+            </div>
+
+          </div>
+
+
+
+          <div class="blank"></div>
+        </div>
+
+
+        <!-- BUDGET TAB -->
+        <div id = "budget_tab">
+          <div class="blank"></div>
+
+          <div id = "budget_col_1">
+
+            <h1> Expenses </h1>
+
+            <div id = "budget_expenses_list">
+              <!-- Empty list that gets appended to -->
+            </div>
+
+            <!-- Add New Expense Button -->
+            <div class = "budget_expense_container">
+              <p  class = "" onclick="add_expense()" style="padding-left: 20px;"> Add Expense </p>
+            </div>
+
+          </div>
+
+          <div class="blank"></div>
+
+          <div id = "budget_col_2">
+
+            <h1> Overview </h1>
+
+            <div id = "budget_overview_list">
+              <!-- Empty list that gets appended to -->
+            </div>
+
+          </div>
+
+          <div class="blank"></div>
+        </div>
+
+
+        <!-- GOALS TAB -->
+        <div id = "goals_tab">
+          <div class="blank"></div>
+
+          <div id = "goals_col">
+
+            <h1> Goals </h1>
+
+            <div id = "goals_list">
+              <!-- Empty list that gets appended to -->
+
+            </div>
+
+            <!-- Add New Goal Button -->
+            <div class = "goals_container">
+              <div class = "goals_col_1">
+                <p class = "" onclick="add_goal()" style="padding-left: 20px;"> Add Goal </p>
+                <p class = "" onclick="" style=""> </p>
+              </div>
+              <div class = "goals_col_2">
+                <p class = "" onclick="" style="">  </p>
+                <p class = "" onclick="" style="">  </p>
+              </div>
+              <div class = "goals_col_3">
+                <p class = "" onclick = "" style=""> </p>
+                <p class = "" onclick = "" style=""> </p>
+              </div>
+              <div class = "goals_col_4_">
+                <p class = "" style = "" > </p>
+              </div>
+            </div>
+            <!-- Formatting required to avoid issues with overlapping -->
+
+          </div>
+
+          <div class="blank"></div>
+        </div>
+
+
+        <!-- ABOUT TAB -->
+        <div id = "about_tab">
+          <div class="blank"></div>
+
+          <div id = "about_col_1">
+
+            <h1> About </h1>
+
+            <div id = "about_list">
+              <div class = "about_container"> <p class = "bold" > How to Use </p> </div>
+              <div class = "about_container"> <p> Click to change items that move </p> </div>
+              <div class = "about_container"> <p> Confirm with <span> enter </span>, cancel with <span> left click </span> </p> </div>
+              <div class = "about_container"> <p class = "bold"> Further Ideas </p> </div>
+              <div class = "about_container"> <p> Experiment with what works for you </p> </div>
+              <div class = "about_container"> <p> Do you own research (10-10-10-70, etc) </p> </div>
+            </div>
+
+          </div>
+
+          <div class="blank"></div>
+
+          <div id = "about_col_2">
+
+            <h1> Debt </h1>
+
+            <div id = "debt_list">
+              <div class = "about_container"> <p> Avoid loans as much as possible </p> </div>
+              <div class = "about_container"> <p> Pay off debts as early as possible </p> </div>
+              <div class = "about_container"> <p> Use online calculators to save money </p> </div>
+              <div class = "about_container"> <p> Consider debt stacking, overpaying, etc </p> </div>
+
+            </div>
+
+          </div>
+
+          <div class="blank"></div>
+        </div>
+
+    </div>
+
+
+    <!-- BUGS -->
+
+    <!-- #1 - Issue when changing expenses data, budget summary sometimes populates in the wrong order. -->
+    <!-- #2 - All expenses disappeared randomly one time when change an expense amount. -->
+    <!-- #3 - Entire contents of liabilities.json was deleted randomly on one occassion after altering assets and liabilities -->
+
+
+    <!-- JavaScript -->
+
+    <script src = 'js/net_worth.js'> // // // Net Worth Tab JS // // // </script>
+
+    <script src = 'js/budget.js'> // // // Budget Tab JS // // // </script>
+
+    <script src = 'js/goals.js'> // // // Goals Tab JS // // // </script>
+
+    <script> window.$ = window.jQuery = require('jquery'); </script>
+
+    <script type = "text/javascript">
+
+      // // // Intro Plutus Logo // // //
+
+       // Logo fades in
+       $('#intro_container').css({top: 0, opacity: 0}).animate({top: 500, opacity: 1}, 1500);
+
+        // Logo fades out
+        setTimeout(function (){
+          $('#intro_container').css({top: 500, opacity: 1}).animate({top: 0, opacity: 0}, 1500);
+        }, 3000);
+
+        // main container fades in, correct tab visible
+        setTimeout(function (){
+          $("#intro_container").css("display", "none"); // disable intro logo
+          $("#main_container").css("display", "block"); // enable main container
+
+          //$("#intro_container").css("display", "none"); // enable net worth tab only
+
+          $('#main_container').css({opacity: 0}).animate({opacity: 1}, 1500);
+        }, 5050);
+
+
+        // // // Switch Between Tabs // // //
+
+        function switch_tab(elem){
+          // fade out currently active tab -> fade in "this" tab & update the list
+          var header_cells = Array.prototype.slice.call(document.getElementsByClassName("menu_cell"));
+          // find out which position the active is in the list
+          // -> fade out using CASE
+          var header_cells_child = []
+          for (i = 0; i < header_cells.length; i++ ){
+            header_cells_child.push(Array.prototype.slice.call(header_cells[i].children)[0])
+          }
+          var header_cells_class = header_cells_child.map(value => value.className);
+          index_fade_in = header_cells.indexOf(elem);
+          index_fade_out = header_cells_class.indexOf("active");
+
+          // if they are the same, break function
+          if (index_fade_in == index_fade_out){
+            return;
+          }
+
+          // case for fade out
+          switch(index_fade_out){
+            case 0:
+              // fade out home
+              $("#net_worth_tab").css("display", "none");
+               break;
+
+            case 1:
+              // fade out budget
+              $("#budget_tab").css("display", "none");
+               break;
+
+            case 2:
+              // fade out goals
+              $("#goals_tab").css("display", "none");
+               break;
+
+            case 3:
+              // fade out about
+              $("#about_tab").css("display", "none");
+               break;
+
+          }
+
+          // case for fade in
+          switch(index_fade_in){
+            case 0:
+              // fade in home
+              $("#net_worth_tab").css("display", "grid");
+              $('#net_worth_tab').css({opacity: 0}).animate({opacity: 1}, 500);
+               break;
+
+            case 1:
+              // fade in budget
+              $("#budget_tab").css("display", "grid");
+              $('#budget_tab').css({opacity: 0}).animate({opacity: 1}, 500);
+               break;
+
+            case 2:
+              // fade in goals
+              $("#goals_tab").css("display", "grid");
+              $('#goals_tab').css({opacity: 0}).animate({opacity: 1}, 500);
+              break;
+
+            case 3:
+              // fade in about
+              $("#about_tab").css("display", "grid");
+              $('#about_tab').css({opacity: 0}).animate({opacity: 1}, 500);
+              break;
+
+          }
+
+          // update active tab
+          // active (index of fade out) -> inactive
+          // elem (index of fade in) -> active
+
+          $(".active").removeClass("active").addClass("inactive");
+          elem.children[0].className = "active";
+
+
+        }
+
+
+    </script>
+
+  </body>
+</html>
