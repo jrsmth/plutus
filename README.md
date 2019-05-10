@@ -1,5 +1,4 @@
-# plutus
-Electron Desktop App - Personal Finance
+# Plutus - Personal Finance Desktop App
 
 ## The application can now be downloaded from the electron app site (httpsdsvfSVfbv)
 
