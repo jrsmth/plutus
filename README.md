@@ -1,6 +1,12 @@
 # Plutus - Personal Finance Desktop App
 
-## The application can now be downloaded from the electron app site (httpsdsvfSVfbv)
+## The Application can be downloaded by following these steps
+### #1 Open on the "Plutus_Application.zip" folder above
+### #2 Downloading app file by double clicking "view raw"
+### #3 Open the download folder and double click the "Plutus" app
+### #4 You may have to access the app via Finder and open it despite the security warning
+
+
 
 <img width="961" alt="Screen Shot 2019-03-14 at 20 47 41" src="https://user-images.githubusercontent.com/34093915/57542151-c61ade80-7348-11e9-9f36-97c7e8200663.png">
 
