@@ -4,7 +4,7 @@
 ### #1 Open the "Plutus_Application.zip" folder above
 ### #2 Down the app file by double clicking "view raw"
 ### #3 Open the download folder
-### #4 Copy the "Plutus" app into another folder or drag it onto your desktop
+### #4 Drag the "Plutus" app onto to your desktop
 ### #5 You may have to open the app despite the security warning
 
 
