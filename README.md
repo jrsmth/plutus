@@ -1,7 +1,7 @@
-# Plutus - Personal Finance Desktop App (Mac & Windows)
+# Plutus - Personal Finance Desktop App (Mac OS)
 
 ## The Application can be downloaded by following these steps
-### #1 Open the "Plutus_Mac.zip" or "Plutus_Win.zip" folder above
+### #1 Open the "Plutus_Mac.zip" folder above
 ### #2 Download the app file by double clicking "view raw"
 ### #3 Open the download folder
 ### #4 Drag the "Plutus" app onto to your desktop (Same as moving it into your Desktop folder)
